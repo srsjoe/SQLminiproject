@@ -1,0 +1,38 @@
+-- Create a videos table.
+-- CREATE TABLE videos (
+-- ID serial PRIMARY KEY,
+-- TItle VARCHAR(255) NOT NULL,
+-- length INT NOT NULL,
+-- url VARCHAR(255) NOT NULL);
+
+--Populate the videos table
+-- INSERT INTO videos (ID, title, length, url)
+-- VALUES
+-- ('1','SQL Explained in 100 Seconds','2','https://www.youtube.com/watch?v=zsjvFFKOm3c'),
+-- ('2','Arizona Zervas - ROXANNE (Official Video)','3','https://www.youtube.com/watch?v=16YnOUnbE6s'),
+-- ('3','https://www.youtube.com/watch?v=h0nxCDiD-zg&t=273s','45','https://www.youtube.com/watch?v=h0nxCDiD-zg&t=273s');
+
+-- Shows all the rows and columns
+-- select *from videos
+
+-- Create Reviewers table.
+-- CREATE TABLE reviewers (
+-- ID serial PRIMARY KEY,
+-- name VARCHAR(255) NOT NULL,
+-- rating INT NOT NULL,
+-- review VARCHAR(255) NOT NULL);
+
+--pulate Reviewers Table.
+-- INSERT INTO reviewers (ID, name, rating, review)
+-- VALUES
+-- ('1','Asher','4','Loved it!'),
+-- ('2','John','5','Amazing!'),
+-- ('3','Tom','3','Good!');
+
+--Show all the rows and columns from Reviewres  table.
+-- select * from reviewers
+
+-- A join statement that shows information from both tables.
+-- SELECT * FROM videos
+-- JOIN reviewers
+-- ON videos.id=reviewers.id

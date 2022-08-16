@@ -1,0 +1,90 @@
+An Insurance database
+Tables: Insurance_product, Users, Insurance_purchases
+-- CREATE TABLE insurance_product (
+-- product_id INT PRIMARY KEY,
+-- insurance_name VARCHAR(50) NOT NULL,
+-- insurance_type VARCHAR(50) NOT NULL,
+-- price NUMERIC);
+
+-- Populate Insurance_product table
+-- INSERT INTO insurance_product (product_id, insurance_name, insurance_type, price)
+-- VALUES
+-- ('1','Allstate','Home','3000'),
+-- ('2','Geico','Car','400'),
+-- ('3','Signa','Health','200');
+
+-- Shows all the rows and columns from insurance_product
+-- SELECT * from insurance_product
+
+-- CREATE TABLE users (
+-- user_id INT PRIMARY KEY,
+-- name VARCHAR(255) NOT NULL,
+-- address VARCHAR(255),
+-- state CHAR(5) NOT NULL,
+-- email VARCHAR(255) NOT NULL,
+-- created_at TIMESTAMP);
+
+--Populate users table
+-- INSERT INTO users (user_id,name, address, state, email,created_at)
+-- VALUES
+-- ('1','Asher','123 Grove st','NY','A12@gmail.com','2017-01-01 00:00:01'),
+-- ('2','John','234 hillside st','CT','J23@yahoo.com','2018-01-01 00:00:01'),
+-- ('3','Tom','456 Olive st','NY','T34@gmail.com','2019-01-01 00:00:01');
+
+-- Shows all the rows and columns from users table
+-- SELECT * from users
+
+
+-- CREATE TABLE insurance_purchase (
+-- product_id INT PRIMARY KEY,
+-- created_at TIMESTAMP,
+-- user_id INT REFERENCES users(user_id));
+
+--Populate insurance_purchase table
+-- INSERT INTO insurance_purchase (product_id, created_at, user_id)
+-- VALUES
+-- ('1','2017-01-01 00:00:01','1'),
+-- ('2','2018-01-01 00:00:01','2'),
+-- ('3','2019-01-01 00:00:01','3');
+
+-- Shows all the rows and columns from insurance_purchase table
+-- SELECT * from insurance_purchase
+
+
+--People who bought insurance from NY
+-- SELECT * FROM insurance_purchase ip
+-- JOIN users 
+-- ON ip.user_id = users.user_id
+-- WHERE state='NY'
+
+-- People who bought insurance 
+-- SELECT * FROM insurance_purchase ip
+-- JOIN users us
+-- ON ip.user_id = us.user_id;
+
+
+--People who did not buy any insurance
+-- SELECT us.name FROM insurance_purchase ip
+-- RIGHT OUTER JOIN users us
+-- ON ip.user_id = us.user_id
+-- WHERE product_id IS NULL;
+
+-- People who bought Home insurance
+-- SELECT * FROM insurance_purchase ip
+-- JOIN users 
+-- ON ip.user_id = users.user_id
+-- WHERE ip.product_id = 1
+
+-- People who bought car insurance
+-- SELECT * FROM insurance_purchase ip
+-- JOIN users 
+-- ON ip.user_id = users.user_id
+-- WHERE ip.product_id = 2;
+
+
+
+
+
+
+
+
